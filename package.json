@@ -1,5 +1,6 @@
 {
   "name": "express-api-postgres-db-setup",
+  "type": "module",
   "version": "1.0.0",
   "description": "This project is simply to outline the processes involved in setting up an Express API with a PostgreSQL database.",
   "main": "app.js",

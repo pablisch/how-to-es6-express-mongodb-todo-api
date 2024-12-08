@@ -1,6 +1,7 @@
-const app = require('./app')
+import app from './app.js'
+import connectToDatabase from './db.js'
+
 const port = process.env.PORT || 3000
-const connectToDatabase = require('./db')
 
 ;(async () => {
   try {

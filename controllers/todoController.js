@@ -1,7 +1,7 @@
-const Todo = require('../models/todo')
-const mongoose = require('mongoose')
+import Todo from '../models/todo.js';
+import mongoose from 'mongoose';
 
-exports.getAllTodos = async (req, res, next) => {
+export const getAllTodos = async (req, res, next) => {
   try {
     const todos = await Todo.find()
     res.status(200).json(todos)
@@ -10,7 +10,7 @@ exports.getAllTodos = async (req, res, next) => {
   }
 }
 
-exports.getTodoById = async (req, res, next) => {
+export const getTodoById = async (req, res, next) => {
   const { id } = req.params
   if (!mongoose.Types.ObjectId.isValid(id))
     return next({ status: 400, message: `'${id}' is not a valid todo ID` })
@@ -28,7 +28,7 @@ exports.getTodoById = async (req, res, next) => {
   }
 }
 
-exports.createTodo = async (req, res, next) => {
+export const createTodo = async (req, res, next) => {
   const { task } = req.body
   if (task === '')
     return next({
@@ -53,7 +53,7 @@ exports.createTodo = async (req, res, next) => {
   }
 }
 
-exports.deleteTodo = async (req, res, next) => {
+export const deleteTodo = async (req, res, next) => {
   const { id } = req.params
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return next({ status: 400, message: `'${id}' is not a valid todo ID` })
@@ -74,7 +74,7 @@ exports.deleteTodo = async (req, res, next) => {
   }
 }
 
-exports.updateTodo = async (req, res, next) => {
+export const updateTodo = async (req, res, next) => {
   const { id } = req.params
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return next({ status: 400, message: `'${id}' is not a valid todo ID` })

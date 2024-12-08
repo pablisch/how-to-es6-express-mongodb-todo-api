@@ -1,6 +1,6 @@
-const express = require('express')
-const todoRoutes = require('./routes/todoRoutes')
-const cors = require('cors')
+import express from 'express';
+import cors from 'cors';
+import todoRoutes from './routes/todoRoutes.js'
 
 const app = express()
 
@@ -23,4 +23,4 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message: err.message })
 })
 
-module.exports = app
+export default app

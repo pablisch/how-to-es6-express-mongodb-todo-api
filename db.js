@@ -1,5 +1,5 @@
-require('dotenv').config()
-const mongoose = require('mongoose')
+import 'dotenv/config'
+import mongoose from 'mongoose'
 
 const dbPassword = process.env.MONGODB_PASSWORD
 const dbUser = process.env.MONGODB_USERNAME
@@ -22,4 +22,4 @@ const connectToDatabase = async (logSuccess = true) => {
   }
 }
 
-module.exports = connectToDatabase
+export default connectToDatabase
