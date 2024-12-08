@@ -116,7 +116,7 @@ These are ways of saying the same thing. In some cases one is easier and more re
 ## Test results
 
 | <img src="howToImages/testResult.png" alt="test result example" width="500" /> |
-| ----------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------------------------------------------ |
 
 This shows the results of the tests in the terminal.
 

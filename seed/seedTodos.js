@@ -1,6 +1,6 @@
-const Todo = require('../models/todo')
-const todoSeedData = require('./todosSeedData')
-const connectToDatabase = require('../db')
+import Todo from '../models/todo.js'
+import todoSeedData from './todosSeedData.js'
+import connectToDatabase from '../db.js'
 
 const clearTodos = async () => {
   await Todo.deleteMany({})
@@ -23,7 +23,7 @@ const seedTodos = async (logSuccess = true) => {
   }
 }
 
-module.exports = seedTodos
+export default seedTodos
 
 // for TEST db => npm run seed:todos:test
 // for dev/production db => npm run seed:todos:dev

@@ -1,4 +1,4 @@
-const seedTodos = require('./seedTodos')
+import seedTodos from './seedTodos.js'
 
 ;(async () => {
   try {

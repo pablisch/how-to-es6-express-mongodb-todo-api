@@ -16,4 +16,4 @@ const todosSeedData = [
   },
 ]
 
-module.exports = todosSeedData
+export default todosSeedData

@@ -7,10 +7,10 @@
 - Clone this repository.
 - Run `npm install` to install the dependencies.
 - Create a `.env` file in the root of the project and add the following environment variables:
-    - `MONGODB_USERNAME=<your-username>`
-    - `MONGODB_PASSWORD=<your-password>`
-    - `MONGODB_DATABASE_NAME=<your-database-name>`
-    - `MONGODB_CLUSTER_REF=<your-cluster-reference>` e.g. cluster0.kdyng
+  - `MONGODB_USERNAME=<your-username>`
+  - `MONGODB_PASSWORD=<your-password>`
+  - `MONGODB_DATABASE_NAME=<your-database-name>`
+  - `MONGODB_CLUSTER_REF=<your-cluster-reference>` e.g. cluster0.kdyng
 - Replace `MONGODB_USERNAME`, `MONGODB_PASSWORD`, `MONGODB_DATABASE_NAME` and `MONGODB_CLUSTER_REF` with your Mongo DB Atlas details.
 - Create a database called `todo_DEV` in MongoDB Atlas with a collection called `todos` for local API use.
 - Create a database called `todo_TEST` in MongoDB Atlas with a collection called `todos` for running tests.

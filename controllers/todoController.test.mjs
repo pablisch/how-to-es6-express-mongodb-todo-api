@@ -1,14 +1,18 @@
 process.env.MONGODB_DATABASE_NAME = 'todo_TEST'
 
-const seedTodos = require('../seed/seedTodos')
-const {
-  getAllTodos,
-  getTodoById,
-  createTodo,
-  deleteTodo,
-  updateTodo,
-} = require('./todoController')
-const Todo = require('../models/todo')
+import seedTodos from '../seed/seedTodos.js'
+// const seedTodos = require('../seed/seedTodos')
+// const {
+//   getAllTodos,
+//   getTodoById,
+//   createTodo,
+//   deleteTodo,
+//   updateTodo,
+// } = require('./todoController')
+import todoController from './todoController.js'
+import Todo from '../models/todo.js'
+
+import {jest} from '@jest/globals'
 
 describe('Todo routes controller functions unit tests', () => {
   beforeEach(async () => {
@@ -26,7 +30,7 @@ describe('Todo routes controller functions unit tests', () => {
       const mNext = jest.fn()
 
       // Act
-      await getAllTodos(mReq, mRes, mNext)
+      await todoController.getAllTodos(mReq, mRes, mNext)
 
       // Assert
       expect(mRes.status).toBeCalledWith(200)
@@ -71,7 +75,7 @@ describe('Todo routes controller functions unit tests', () => {
         const mNext = jest.fn()
 
         // Act
-        await getTodoById(mReq, mRes, mNext)
+        await todoController.getTodoById(mReq, mRes, mNext)
 
         // Assert
         expect(mRes.status).toBeCalledWith(200)
@@ -109,7 +113,7 @@ describe('Todo routes controller functions unit tests', () => {
         const mNext = jest.fn()
 
         // Act
-        await getTodoById(mReq, mRes, mNext)
+        await todoController.getTodoById(mReq, mRes, mNext)
 
         // Assert
         expect(mRes.status).not.toHaveBeenCalled()
@@ -138,7 +142,7 @@ describe('Todo routes controller functions unit tests', () => {
         const mNext = jest.fn()
 
         // Act
-        await createTodo(mReq, mRes, mNext)
+        await todoController.createTodo(mReq, mRes, mNext)
 
         // Assert
         expect(mRes.status).toHaveBeenCalledWith(201)
@@ -169,7 +173,7 @@ describe('Todo routes controller functions unit tests', () => {
         const mNext = jest.fn()
 
         // Act
-        await createTodo(mReq, mRes, mNext)
+        await todoController.createTodo(mReq, mRes, mNext)
 
         // Assert
         expect(mRes.status).not.toHaveBeenCalled()
@@ -205,7 +209,7 @@ describe('Todo routes controller functions unit tests', () => {
         const mNext = jest.fn()
 
         // Act
-        await deleteTodo(mReq, mRes, mNext)
+        await todoController.deleteTodo(mReq, mRes, mNext)
 
         // Assert
         expect(mRes.status).toHaveBeenCalledWith(200)
@@ -245,7 +249,7 @@ describe('Todo routes controller functions unit tests', () => {
         const mNext = jest.fn()
 
         // Act
-        await deleteTodo(mReq, mRes, mNext)
+        await todoController.deleteTodo(mReq, mRes, mNext)
 
         // Assert
         expect(mRes.status).not.toHaveBeenCalled()
@@ -281,7 +285,7 @@ describe('Todo routes controller functions unit tests', () => {
         const mNext = jest.fn()
 
         // Act
-        await updateTodo(mReq, mRes, mNext)
+        await todoController.updateTodo(mReq, mRes, mNext)
 
         // Assert
         expect(mRes.status).toHaveBeenCalledWith(200)
@@ -315,7 +319,7 @@ describe('Todo routes controller functions unit tests', () => {
         const mNext = jest.fn()
 
         // Act
-        await updateTodo(mReq, mRes, mNext)
+        await todoController.updateTodo(mReq, mRes, mNext)
 
         // Assert
         expect(mRes.status).toHaveBeenCalledWith(200)
@@ -349,7 +353,7 @@ describe('Todo routes controller functions unit tests', () => {
         const mNext = jest.fn()
 
         // Act
-        await updateTodo(mReq, mRes, mNext)
+        await todoController.updateTodo(mReq, mRes, mNext)
 
         // Assert
         expect(mRes.status).toHaveBeenCalledWith(200)
@@ -445,7 +449,7 @@ describe('Todo routes controller functions unit tests', () => {
         const mNext = jest.fn()
 
         // Act
-        await updateTodo(mReq, mRes, mNext)
+        await todoController.updateTodo(mReq, mRes, mNext)
 
         // Assert
         expect(mRes.status).not.toHaveBeenCalled()
@@ -495,7 +499,7 @@ describe('Todo routes controller functions unit tests', () => {
         const mNext = jest.fn()
 
         // Act
-        await updateTodo(mReq, mRes, mNext)
+        await todoController.updateTodo(mReq, mRes, mNext)
 
         // Assert
         expect(mRes.status).not.toHaveBeenCalled()
@@ -550,7 +554,7 @@ describe('Todo routes controller functions unit tests', () => {
         const mNext = jest.fn()
 
         // Act
-        await updateTodo(mReq, mRes, mNext)
+        await todoController.updateTodo(mReq, mRes, mNext)
 
         // Assert
         expect(mRes.status).not.toHaveBeenCalled()
@@ -600,7 +604,7 @@ describe('Todo routes controller functions unit tests', () => {
         const mNext = jest.fn()
 
         // Act
-        await updateTodo(mReq, mRes, mNext)
+        await todoController.updateTodo(mReq, mRes, mNext)
 
         // Assert
         expect(mRes.status).not.toHaveBeenCalled()
