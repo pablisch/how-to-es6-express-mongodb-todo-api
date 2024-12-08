@@ -3,7 +3,7 @@ process.env.MONGODB_DATABASE_NAME = 'todo_TEST'
 // const request = require('supertest')
 import app from './app'
 import request from 'supertest'
-// const app = require('./app')
+// import app from './app.js'
 import seedTodos from './seed/seedTodos.js'
 // const seedTodos = require('./seed/seedTodos')
 

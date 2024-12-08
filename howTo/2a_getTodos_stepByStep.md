@@ -30,7 +30,7 @@ Import `mongoose` to be able to validate IDs as valid MongoDB IDs.
 
 ```javascript
 const Todo = require('../models/todo')
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 ```
 
 The logic for the todo route should be moved from `app.js` into the controller file, `todoController.js`, in the `controllers` folder.
@@ -56,7 +56,7 @@ const router = Router()
 
 const { getAllTodos } = require('../controllers/todoController')
 
-module.exports = router
+export default router
 ```
 
 Between the imports and export, add the first route:
@@ -112,7 +112,7 @@ At this point, you could also remove the `home` route from app.js, whose purpose
 ### app.js
 
 ```javascript
-const express = require('express')
+import express from 'express'
 const todoRoutes = require('./routes/todoRoutes')
 const cors = require('cors')
 
@@ -129,7 +129,7 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message: err.message })
 })
 
-module.exports = app
+export default app
 ```
 
 ### routes/todoRoutes.js
@@ -142,14 +142,14 @@ const { getAllTodos } = require('../controllers/todoController')
 
 router.get('/', getAllTodos)
 
-module.exports = router
+export default router
 ```
 
 ### controllers/todoController.js
 
 ```javascript
 const Todo = require('../models/todo')
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
 exports.getAllTodos = async (req, res, next) => {
   try {

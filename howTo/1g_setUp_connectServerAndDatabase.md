@@ -5,7 +5,7 @@
 We now have a basic Express server, a MongoDB database and a database connection function. Now we bring them together:
 
 ```javascript
-const app = require('./app')
+import app from './app.js'
 const port = process.env.PORT || 3000
 const connectToDatabase = require('./db')
 
@@ -43,7 +43,7 @@ Or, read on for an explanation of the code above.
 The starting point for this section was our `server.js` file:
 
 ```javascript
-const app = require('./app')
+import app from './app.js'
 const port = process.env.PORT || 3000
 
 app.listen(port, () => {
@@ -56,7 +56,7 @@ The minimal step to add the database connection would be to import the connectio
 **EXAMPLE CODE NOT USED IN THIS APP**
 
 ```javascript
-const app = require('./app')
+import app from './app.js'
 const port = process.env.PORT || 3000
 const connectToDatabase = require('./db')
 
@@ -130,7 +130,7 @@ OR
 ## Final server.js code
 
 ```javascript
-const app = require('./app')
+import app from './app.js'
 const port = process.env.PORT || 3000
 const connectToDatabase = require('./db')
 

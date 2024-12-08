@@ -3,7 +3,8 @@
 In the app.js file, create the Express server, set up some basic middleware and a test home route. For example:
 
 ```javascript
-const express = require('express')
+import express from 'express'
+import cors from 'cors'
 
 const app = express()
 
@@ -24,13 +25,13 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message: err.message })
 })
 
-module.exports = app
+export default app
 ```
 
 In the server.js file, start the server. For example:
 
 ```javascript
-const app = require('./app')
+import app from './app.js'
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
@@ -63,8 +64,10 @@ OR see below for explanation of the server code using code comments:
 ### app.js
 
 ```javascript
-const express = require('express')
+import express from 'express'
 // import the Express framework for building Node APIs
+import cors from 'cors'
+// import the cors library
 
 const app = express()
 // declare `app` as an instance of Express
@@ -97,14 +100,14 @@ app.use((err, req, res, next) => {
   // the response status and err.message are returned in the repsonse body
 })
 
-module.exports = app
+export default app
 // app is exported
 ```
 
 ### server.js
 
 ```javascript
-const app = require('./app')
+import app from './app.js'
 // app, an instance of Express, is imported from app.js
 const PORT = process.env.PORT || 3000
 // the port number is defined as the environment variable, PORT, or 3000 if none is defined

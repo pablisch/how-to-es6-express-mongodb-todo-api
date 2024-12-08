@@ -7,8 +7,8 @@ Many apps have the database connection in `app.js` but since we will need to con
 In the currently empty `db.js` file, import `dotenv` and `mongoose`:
 
 ```javascript
-require('dotenv').config()
-const mongoose = require('mongoose')
+import 'dotenv/config'
+import mongoose from 'mongoose'
 ```
 
 Declare constants for environment variables that will make up the `MongoDB URI` string:
@@ -43,7 +43,7 @@ const connectToDatabase = async (logSuccess = true) => {
 And finally, export the function:
 
 ```javascript
-module.exports = connectToDatabase
+export default connectToDatabase
 ```
 
 **NOTE:**
@@ -57,8 +57,8 @@ module.exports = connectToDatabase
 ## Final db.js code
 
 ```javascript
-require('dotenv').config()
-const mongoose = require('mongoose')
+import 'dotenv/config'
+import mongoose from 'mongoose'
 
 const dbPassword = process.env.MONGODB_PASSWORD
 const dbUser = process.env.MONGODB_USERNAME
@@ -81,7 +81,7 @@ const connectToDatabase = async (logSuccess = true) => {
   }
 }
 
-module.exports = connectToDatabase
+export default connectToDatabase
 ```
 
 [NEXT: Creating seeding functions and scripts](1f_setUp_seedingFunctions.md)

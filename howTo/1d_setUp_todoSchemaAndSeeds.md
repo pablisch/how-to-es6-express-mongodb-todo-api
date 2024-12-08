@@ -9,7 +9,7 @@ Since our server is all about connecting to a database and managing `todos` we w
 In `models/todo.js`, import `mongoose`.
 
 ```javascript
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 ```
 
 And create the schema model for `todos`:
@@ -29,7 +29,7 @@ const todoSchema = new mongoose.Schema(
 Finally, export the schema:
 
 ```javascript
-module.exports = mongoose.model('Todo', todoSchema)
+export default mongoose.model('Todo', todoSchema)
 ```
 
 **NOTES:**
@@ -69,7 +69,7 @@ const todosSeedData = [
   },
 ]
 
-module.exports = todosSeedData
+export default todosSeedData
 ```
 
 [NEXT: Setting up a database connection as a function](1e_setUp_databaseConnection.md)
@@ -79,7 +79,7 @@ module.exports = todosSeedData
 ### Final models/todo.js code
 
 ```javascript
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
 const todoSchema = new mongoose.Schema(
   {
@@ -91,7 +91,7 @@ const todoSchema = new mongoose.Schema(
   },
 )
 
-module.exports = mongoose.model('Todo', todoSchema)
+export default mongoose.model('Todo', todoSchema)
 ```
 
 ### The final seed/todosSeedData.js code
@@ -115,7 +115,7 @@ const todosSeedData = [
   },
 ]
 
-module.exports = todosSeedData
+export default todosSeedData
 ```
 
 [NEXT: Setting up a database connection as a function](1e_setUp_databaseConnection.md)

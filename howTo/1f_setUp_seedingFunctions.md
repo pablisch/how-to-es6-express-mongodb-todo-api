@@ -46,7 +46,7 @@ const seedTodos = async (logSuccess = true) => {
 And finally, export the function:
 
 ```javascript
-module.exports = seedTodos
+export default seedTodos
 ```
 
 I also added some comments at the end as a reminder of use and the scripts that will be written:
@@ -138,7 +138,7 @@ const seedTodos = async (logSuccess = true) => {
   }
 }
 
-module.exports = seedTodos
+export default seedTodos
 
 // for TEST db => npm run seed:todos:test
 // for dev/production db => npm run seed:todos:dev

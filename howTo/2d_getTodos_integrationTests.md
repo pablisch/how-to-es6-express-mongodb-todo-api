@@ -8,7 +8,7 @@ In the `app.test.js` file, import `app`, `request` from `supertest` and the `see
 process.env.MONGODB_DATABASE_NAME = 'todo_TEST'
 
 const request = require('supertest')
-const app = require('./app')
+import app from './app.js'
 const seedTodos = require('./seed/seedTodos')
 ```
 
@@ -66,7 +66,7 @@ npm test
 process.env.MONGODB_DATABASE_NAME = 'todo_TEST'
 
 const request = require('supertest')
-const app = require('./app')
+import app from './app.js'
 const seedTodos = require('./seed/seedTodos')
 
 describe('App todo endpoints integration tests', () => {
