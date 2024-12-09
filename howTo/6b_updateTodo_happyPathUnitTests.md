@@ -10,18 +10,6 @@
 
 **NOTE:** As the testing for the `PATCH` endpoint is considerably longer than other endpoints, both the unit and integration sections have been split into `happy path` and `error handling` tests.
 
-Add the `updateTodo` function to the existing imports:
-
-```javascript
-const {
-  getAllTodos,
-  getTodoById,
-  createTodo,
-  deleteTodo,
-  updateTodo,
-} from './todoController')
-```
-
 Within the over-arching `describe('Todo routes controller functions unit tests')` block, add a `describe` block for the `updateTodo` function:
 
 ```javascript

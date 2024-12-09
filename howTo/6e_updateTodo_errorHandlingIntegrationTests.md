@@ -212,7 +212,11 @@ test.each([
 )
 ```
 
-[NEXT: Notes on testing in this repository](7a_misc_notesOnTestingInRepo.md)
+That's it, the API is done.
+
+[Back to the main menu](../README.md)
+
+[Notes on testing in this repository](7a_misc_notesOnTestingInRepo.md)
 
 ### Final `PATCH /todos/:id` error handling integration test code
 
@@ -398,7 +402,11 @@ test.each([
 )
 ```
 
-[NEXT: Notes on testing in this repository](7a_misc_notesOnTestingInRepo.md)
+That's it, the API is done.
+
+[Back to the main menu](../README.md)
+
+[Notes on testing in this repository](7a_misc_notesOnTestingInRepo.md)
 
 ### Final `PATCH /todos/:id` COMPLETE integration test code
 
@@ -652,4 +660,8 @@ describe('PATCH /todos/:id', () => {
 })
 ```
 
-[NEXT: Notes on testing in this repository](7a_misc_notesOnTestingInRepo.md)
+That's it, the API is done.
+
+[Back to the main menu](../README.md)
+
+[Notes on testing in this repository](7a_misc_notesOnTestingInRepo.md)

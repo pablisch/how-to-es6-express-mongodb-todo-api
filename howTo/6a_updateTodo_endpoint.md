@@ -173,18 +173,7 @@ updateTodo: async function (req, res, next) {
 
 ## Adding the POST /todos route
 
-Start by importing the `updateTodo` function into `todoRoutes.js` by adding it to the current import from `todoController.js`:
-
-```javascript
-const {
-  getAllTodos,
-  getTodoById,
-  createTodo,
-  updateTodo,
-} from '../controllers/todoController')
-```
-
-And add the new route:
+Add the new route:
 
 ```javascript
 router.delete('/', todoController.updateTodo)

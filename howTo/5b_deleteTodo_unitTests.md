@@ -2,17 +2,6 @@
 
 [Jump to complete test code](#final-deletetodo-unit-test-code)
 
-Add the `deleteTodo` function to the existing imports:
-
-```javascript
-const {
-  getAllTodos,
-  getTodoById,
-  createTodo,
-  deleteTodo,
-} from './todoController')
-```
-
 Within the over-arching `describe('Todo routes controller functions unit tests')` block, add a `describe` block for the `deleteTodo` function:
 
 ```javascript
