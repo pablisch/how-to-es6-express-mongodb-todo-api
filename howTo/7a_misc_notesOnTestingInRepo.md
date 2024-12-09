@@ -11,10 +11,10 @@ These test the API endpoints and the database together. They are written in the 
 Example:
 
 ```javascript
-const response = await request(app).post('/todos').send({ task })
+const response = await request(app).post('/api/v1.0/todos').send({ task })
 ```
 
-Here, `request(app)` is a function from `supertest` that makes a request to the server. `.post('/todos')` is the type of request and the endpoint. `.send({ task })` is the data being sent with the request.
+Here, `request(app)` is a function from `supertest` that makes a request to the server. `.post('/api/v1.0/todos')` is the type of request and the endpoint. `.send({ task })` is the data being sent with the request.
 
 In the `response` object, you can check the status code and the body of the response, e.g.
 

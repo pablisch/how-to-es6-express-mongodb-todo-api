@@ -37,7 +37,7 @@ describe('GET /todos', () => {})
 ```javascript
 test('should return an array of all todos and status 200', async () => {
   // Act
-  const response = await request(app).get('/todos')
+  const response = await request(app).get('/api/v1.0/todos')
 
   // Assert
   expect(response.status).toBe(200)
@@ -77,7 +77,7 @@ describe('App todo endpoints integration tests', () => {
   describe('GET /todos', () => {
     test('should return an array of all todos and status 200', async () => {
       // Act
-      const response = await request(app).get('/todos')
+      const response = await request(app).get('/api/v1.0/todos')
 
       // Assert
       expect(response.status).toBe(200)

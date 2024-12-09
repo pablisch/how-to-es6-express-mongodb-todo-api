@@ -68,17 +68,6 @@ deleteTodo: async function (req, res, next) {
 
 ## Adding the POST /todos route
 
-Start by importing the `deleteTodo` function into `todoRoutes.js` by adding it to the current import from `todoController.js`:
-
-```javascript
-const {
-  getAllTodos,
-  getTodoById,
-  createTodo,
-  deleteTodo,
-} from '../controllers/todoController')
-```
-
 And add the new route:
 
 ```javascript

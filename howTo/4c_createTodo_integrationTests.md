@@ -15,7 +15,7 @@ test.each(['Climb', 'Swim', 'Climb a tree'])(
   'should add a todo to the database and return status 201 and the created todo object when passed the todo: "%s"',
   async (task) => {
     // Act
-    const response = await request(app).post('/todos').send({ task })
+    const response = await request(app).post('/api/v1.0/todos').send({ task })
 
     // Assert
     expect(response.status).toBe(201)
@@ -38,7 +38,7 @@ test.each([
   'should return status 400 and an appropriate error message when given task value: "%s"',
   async (task, errorMessage) => {
     // Act
-    const response = await request(app).post('/todos').send({ task })
+    const response = await request(app).post('/api/v1.0/todos').send({ task })
 
     // Assert
     expect(response.status).toBe(400)
@@ -57,7 +57,7 @@ describe('POST /todos', () => {
     'should add a todo to the database and return status 201 and the created todo object when passed the todo: "%s"',
     async (task) => {
       // Act
-      const response = await request(app).post('/todos').send({ task })
+      const response = await request(app).post('/api/v1.0/todos').send({ task })
 
       // Assert
       expect(response.status).toBe(201)
@@ -76,7 +76,7 @@ describe('POST /todos', () => {
     'should return status 400 and an appropriate error message when given task value: "%s"',
     async (task, errorMessage) => {
       // Act
-      const response = await request(app).post('/todos').send({ task })
+      const response = await request(app).post('/api/v1.0/todos').send({ task })
 
       // Assert
       expect(response.status).toBe(400)
