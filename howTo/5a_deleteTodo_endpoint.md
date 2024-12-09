@@ -3,7 +3,7 @@
 ## Write the basic deleteTodo controller function
 
 ```javascript
-exports.deleteTodo = async (req, res, next) => {
+deleteTodo: async function (req, res, next) {
   const { id } = req.params
   try {
     const todo = await Todo.findByIdAndDelete(id)
@@ -44,7 +44,7 @@ if (!todo) {
 The valid `_id` check will go after the `_id` is destructured and the 'existing todo' check will go as soon as the call to the database gives a response.
 
 ```javascript
-exports.deleteTodo = async (req, res, next) => {
+deleteTodo: async function (req, res, next) {
   const { id } = req.params
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return next({ status: 400, message: `'${id}' is not a valid todo ID` })

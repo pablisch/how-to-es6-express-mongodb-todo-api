@@ -3,7 +3,7 @@
 ## Write the basic createTodo controller function
 
 ```javascript
-exports.createTodo = async (req, res, next) => {
+createTodo: async function (req, res, next) {
   const { task } = req.body
   const todo = new Todo({
     task,
@@ -15,7 +15,7 @@ exports.createTodo = async (req, res, next) => {
   } catch (error) {
     next(error)
   }
-}
+},
 ```
 
 ## Add validation for createTodo
@@ -56,7 +56,7 @@ if (typeof task !== 'string')
 These can all go sequentially after the destructuring of `task` resulting in the completed function:
 
 ```javascript
-exports.createTodo = async (req, res, next) => {
+createTodo: async function (req, res, next) {
   const { task } = req.body
   if (task === '')
     return next({
@@ -79,20 +79,10 @@ exports.createTodo = async (req, res, next) => {
   } catch (error) {
     next(error)
   }
-}
+},
 ```
 
 ## Adding the POST /todos route
-
-Start by importing the `createTodo` function into `todoRoutes.js` by adding it to the current import from `todoController.js`:
-
-```javascript
-const {
-  getAllTodos,
-  getTodoById,
-  createTodo,
-} from '../controllers/todoController')
-```
 
 And add the new route:
 

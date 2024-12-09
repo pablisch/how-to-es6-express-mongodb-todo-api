@@ -2,12 +2,6 @@
 
 [Jump to complete test code](#final-createtodo-unit-test-code)
 
-Add the `createTodo` function to the existing imports:
-
-```javascript
-const { getAllTodos, getTodoById, createTodo } from './todoController')
-```
-
 Within the over-arching `describe('Todo routes controller functions unit tests')` block, add a `describe` block for the `createTodo` function:
 
 ```javascript
@@ -33,7 +27,7 @@ test.each(['Climb', 'Swim', 'Climb a tree'])(
     const mNext = jest.fn()
 
     // Act
-    await createTodo(mReq, mRes, mNext)
+    await todoController.createTodo(mReq, mRes, mNext)
 
     // Assert
     expect(mRes.status).toHaveBeenCalledWith(201)
@@ -77,7 +71,7 @@ test.each([
     const mNext = jest.fn()
 
     // Act
-    await createTodo(mReq, mRes, mNext)
+    await todoController.createTodo(mReq, mRes, mNext)
 
     // Assert
     expect(mRes.status).not.toHaveBeenCalled()
@@ -111,7 +105,7 @@ describe('createTodo()', () => {
       const mNext = jest.fn()
 
       // Act
-      await createTodo(mReq, mRes, mNext)
+      await todoController.createTodo(mReq, mRes, mNext)
 
       // Assert
       expect(mRes.status).toHaveBeenCalledWith(201)
@@ -142,7 +136,7 @@ describe('createTodo()', () => {
       const mNext = jest.fn()
 
       // Act
-      await createTodo(mReq, mRes, mNext)
+      await todoController.createTodo(mReq, mRes, mNext)
 
       // Assert
       expect(mRes.status).not.toHaveBeenCalled()

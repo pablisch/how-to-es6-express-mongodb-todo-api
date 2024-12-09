@@ -2,12 +2,6 @@
 
 [Jump to complete test code](#final-gettodobyid-unit-test-code)
 
-Add the `getTodoById` function to the existing imports:
-
-```javascript
-const { getAllTodos, getTodoById } from './todoController')
-```
-
 ## Happy route tests
 
 Within the over-arching `describe('Todo routes controller functions unit tests')` block, add a `describe` block for the `getTodoById` function:
@@ -39,7 +33,7 @@ test.each([
     const mNext = jest.fn()
 
     // Act
-    await getTodoById(mReq, mRes, mNext)
+    await todoController.getTodoById(mReq, mRes, mNext)
 
     // Assert
     expect(mRes.status).toBeCalledWith(200)
@@ -93,7 +87,7 @@ test.each([
     const mNext = jest.fn()
 
     // Act
-    await getTodoById(mReq, mRes, mNext)
+    await todoController.getTodoById(mReq, mRes, mNext)
 
     // Assert
     expect(mRes.status).not.toHaveBeenCalled()
@@ -131,7 +125,7 @@ describe('getTodoById()', () => {
       const mNext = jest.fn()
 
       // Act
-      await getTodoById(mReq, mRes, mNext)
+      await todoController.getTodoById(mReq, mRes, mNext)
 
       // Assert
       expect(mRes.status).toBeCalledWith(200)
@@ -169,7 +163,7 @@ describe('getTodoById()', () => {
       const mNext = jest.fn()
 
       // Act
-      await getTodoById(mReq, mRes, mNext)
+      await todoController.getTodoById(mReq, mRes, mNext)
 
       // Assert
       expect(mRes.status).not.toHaveBeenCalled()

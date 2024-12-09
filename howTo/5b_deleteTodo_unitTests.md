@@ -42,7 +42,7 @@ test.each([
     const mNext = jest.fn()
 
     // Act
-    await deleteTodo(mReq, mRes, mNext)
+    await todoController.deleteTodo(mReq, mRes, mNext)
 
     // Assert
     expect(mRes.status).toHaveBeenCalledWith(200)
@@ -93,7 +93,7 @@ test.each([
     const mNext = jest.fn()
 
     // Act
-    await deleteTodo(mReq, mRes, mNext)
+    await todoController.deleteTodo(mReq, mRes, mNext)
 
     // Assert
     expect(mRes.status).not.toHaveBeenCalled()
@@ -130,7 +130,7 @@ describe('deleteTodo()', () => {
       const mNext = jest.fn()
 
       // Act
-      await deleteTodo(mReq, mRes, mNext)
+      await todoController.deleteTodo(mReq, mRes, mNext)
 
       // Assert
       expect(mRes.status).toHaveBeenCalledWith(200)
@@ -170,7 +170,7 @@ describe('deleteTodo()', () => {
       const mNext = jest.fn()
 
       // Act
-      await deleteTodo(mReq, mRes, mNext)
+      await todoController.deleteTodo(mReq, mRes, mNext)
 
       // Assert
       expect(mRes.status).not.toHaveBeenCalled()

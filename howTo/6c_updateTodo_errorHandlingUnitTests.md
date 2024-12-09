@@ -115,7 +115,7 @@ test.each([
     const mNext = jest.fn()
 
     // Act
-    await updateTodo(mReq, mRes, mNext)
+    await todoController.updateTodo(mReq, mRes, mNext)
 
     // Assert
     expect(mRes.status).not.toHaveBeenCalled()
@@ -170,7 +170,7 @@ test.each([
     const mNext = jest.fn()
 
     // Act
-    await updateTodo(mReq, mRes, mNext)
+    await todoController.updateTodo(mReq, mRes, mNext)
 
     // Assert
     expect(mRes.status).not.toHaveBeenCalled()
@@ -231,7 +231,7 @@ test.each([
     const mNext = jest.fn()
 
     // Act
-    await updateTodo(mReq, mRes, mNext)
+    await todoController.updateTodo(mReq, mRes, mNext)
 
     // Assert
     expect(mRes.status).not.toHaveBeenCalled()
@@ -286,7 +286,7 @@ test.each([
     const mNext = jest.fn()
 
     // Act
-    await updateTodo(mReq, mRes, mNext)
+    await todoController.updateTodo(mReq, mRes, mNext)
 
     // Assert
     expect(mRes.status).not.toHaveBeenCalled()
@@ -386,7 +386,7 @@ test.each([
     const mNext = jest.fn()
 
     // Act
-    await updateTodo(mReq, mRes, mNext)
+    await todoController.updateTodo(mReq, mRes, mNext)
 
     // Assert
     expect(mRes.status).not.toHaveBeenCalled()
@@ -433,7 +433,7 @@ test.each([
     const mNext = jest.fn()
 
     // Act
-    await updateTodo(mReq, mRes, mNext)
+    await todoController.updateTodo(mReq, mRes, mNext)
 
     // Assert
     expect(mRes.status).not.toHaveBeenCalled()
@@ -485,7 +485,7 @@ test.each([
     const mNext = jest.fn()
 
     // Act
-    await updateTodo(mReq, mRes, mNext)
+    await todoController.updateTodo(mReq, mRes, mNext)
 
     // Assert
     expect(mRes.status).not.toHaveBeenCalled()
@@ -532,7 +532,7 @@ test.each([
     const mNext = jest.fn()
 
     // Act
-    await updateTodo(mReq, mRes, mNext)
+    await todoController.updateTodo(mReq, mRes, mNext)
 
     // Assert
     expect(mRes.status).not.toHaveBeenCalled()
@@ -572,7 +572,7 @@ describe('updateTodo()', () => {
       const mNext = jest.fn()
 
       // Act
-      await updateTodo(mReq, mRes, mNext)
+      await todoController.updateTodo(mReq, mRes, mNext)
 
       // Assert
       expect(mRes.status).toHaveBeenCalledWith(200)
@@ -606,7 +606,7 @@ describe('updateTodo()', () => {
       const mNext = jest.fn()
 
       // Act
-      await updateTodo(mReq, mRes, mNext)
+      await todoController.updateTodo(mReq, mRes, mNext)
 
       // Assert
       expect(mRes.status).toHaveBeenCalledWith(200)
@@ -640,7 +640,7 @@ describe('updateTodo()', () => {
       const mNext = jest.fn()
 
       // Act
-      await updateTodo(mReq, mRes, mNext)
+      await todoController.updateTodo(mReq, mRes, mNext)
 
       // Assert
       expect(mRes.status).toHaveBeenCalledWith(200)
@@ -736,7 +736,7 @@ describe('updateTodo()', () => {
       const mNext = jest.fn()
 
       // Act
-      await updateTodo(mReq, mRes, mNext)
+      await todoController.updateTodo(mReq, mRes, mNext)
 
       // Assert
       expect(mRes.status).not.toHaveBeenCalled()
@@ -783,7 +783,7 @@ describe('updateTodo()', () => {
       const mNext = jest.fn()
 
       // Act
-      await updateTodo(mReq, mRes, mNext)
+      await todoController.updateTodo(mReq, mRes, mNext)
 
       // Assert
       expect(mRes.status).not.toHaveBeenCalled()
@@ -835,7 +835,7 @@ describe('updateTodo()', () => {
       const mNext = jest.fn()
 
       // Act
-      await updateTodo(mReq, mRes, mNext)
+      await todoController.updateTodo(mReq, mRes, mNext)
 
       // Assert
       expect(mRes.status).not.toHaveBeenCalled()
@@ -882,7 +882,7 @@ describe('updateTodo()', () => {
       const mNext = jest.fn()
 
       // Act
-      await updateTodo(mReq, mRes, mNext)
+      await todoController.updateTodo(mReq, mRes, mNext)
 
       // Assert
       expect(mRes.status).not.toHaveBeenCalled()
