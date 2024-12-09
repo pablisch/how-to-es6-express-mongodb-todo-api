@@ -90,7 +90,7 @@ import todoRoutes from './routes/todoRoutes'
 Use`todoRoutes` between the single home route and the `next` error handling middleware:
 
 ```javascript
-app.use('/todos', todoRoutes)
+app.use('/api/v1.0/todos', todoRoutes)
 ```
 
 ## Clean up old todo route code in app.js
@@ -134,7 +134,7 @@ app.use(cors())
 
 app.use(express.json())
 
-app.use('/todos', todoRoutes)
+app.use('/api/v1.0/todos', todoRoutes)
 
 app.use((err, req, res, next) => {
   const status = err.status || 500
@@ -163,13 +163,15 @@ export default router
 import Todo from '../models/todo.js'
 import mongoose from 'mongoose'
 
-exports.getAllTodos = async (req, res, next) => {
-  try {
-    const todos = await Todo.find()
-    res.status(200).json(todos)
-  } catch (error) {
-    next(error)
-  }
+export default {
+  getAllTodos: async function(req, res, next) {
+    try {
+      const todos = await Todo.find()
+      res.status(200).json(todos)
+    } catch (error) {
+      next(error)
+    }
+  },
 }
 ```
 

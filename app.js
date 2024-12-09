@@ -16,7 +16,7 @@ app.use(cors())
 
 app.use(express.json())
 
-app.use('/todos', todoRoutes)
+app.use('/api/v1.0/todos', todoRoutes)
 
 app.use((err, req, res, next) => {
   const status = err.status || 500

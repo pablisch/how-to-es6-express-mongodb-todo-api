@@ -79,6 +79,6 @@ router.get('/:id', getTodoById)
 
 `router` is already being exported so nothing needs to be added there.
 
-**NOTE:** Since we have `app.use('/todos', todoRoutes)` in `app.js`, nothing needs to be added there either.
+**NOTE:** Since we have `app.use('/api/v1.0/todos', todoRoutes)` in `app.js`, nothing needs to be added there either.
 
 [NEXT: getTodoById controller unit tests](3b_getTodoById_unitTests.md)
