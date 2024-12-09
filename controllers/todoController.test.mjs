@@ -1,7 +1,7 @@
 process.env.MONGODB_DATABASE_NAME = 'todo_TEST'
 
 import seedTodos from '../seed/seedTodos.js'
-// const seedTodos from '../seed/seedTodos')
+// import seedTodos from '../seed/seedTodos'
 // const {
 //   getAllTodos,
 //   getTodoById,

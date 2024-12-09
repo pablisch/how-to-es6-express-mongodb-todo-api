@@ -11,8 +11,8 @@ In the file, `todoController.test.js`, in the `controllers` folder, import `getA
 ```javascript
 process.env.MONGODB_DATABASE_NAME = 'todo_TEST'
 
-const seedTodos from '../seed/seedTodos')
-const { getAllTodos } from './todoController')
+import seedTodos from '../seed/seedTodos'
+import todoController from './todoController'
 import Todo from '../models/todo.js'
 ```
 
@@ -47,7 +47,7 @@ test('should return an array of all todo objects and status 200', async () => {
   const mNext = jest.fn()
 
   // Act
-  await getAllTodos(mReq, mRes, mNext)
+  await todoController.getAllTodos(mReq, mRes, mNext)
 
   // Assert
   expect(mRes.status).toBeCalledWith(200)
@@ -115,8 +115,8 @@ npm test
 ```javascript
 process.env.MONGODB_DATABASE_NAME = 'todo_TEST'
 
-const seedTodos from '../seed/seedTodos')
-const { getAllTodos } from './todoController')
+import seedTodos from '../seed/seedTodos'
+import todoController from './todoController'
 import Todo from '../models/todo.js'
 
 describe('Todo routes controller functions unit tests', () => {
@@ -135,7 +135,7 @@ describe('Todo routes controller functions unit tests', () => {
       const mNext = jest.fn()
 
       // Act
-      await getAllTodos(mReq, mRes, mNext)
+      await todoController.getAllTodos(mReq, mRes, mNext)
 
       // Assert
       expect(mRes.status).toBeCalledWith(200)
