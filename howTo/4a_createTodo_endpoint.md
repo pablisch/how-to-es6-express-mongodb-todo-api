@@ -97,7 +97,7 @@ const {
 And add the new route:
 
 ```javascript
-router.post('/', createTodo)
+router.post('/', todoController.createTodo)
 ```
 
 And as before, there is no need to add anything to `app.js`.

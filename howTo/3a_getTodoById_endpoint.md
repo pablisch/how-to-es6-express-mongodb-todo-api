@@ -3,7 +3,7 @@
 ## Write the basic getTodoById controller function
 
 ```javascript
-exports.getTodoById = async (req, res, next) => {
+getTodoById: async function (req, res, next) {
   const { id } = req.params
   try {
     const todo = await Todo.findById(id)
@@ -11,7 +11,7 @@ exports.getTodoById = async (req, res, next) => {
   } catch (error) {
     next(error)
   }
-}
+},
 ```
 
 ## Add validation for createTodo
@@ -44,7 +44,7 @@ Other server errors will be handled by the `next` middleware.
 The `getTodoById` controller with validation and error handling looks like this:
 
 ```javascript
-exports.getTodoById = async (req, res, next) => {
+getTodoById: async function (req, res, next) {
   const { id } = req.params
   if (!mongoose.Types.ObjectId.isValid(id))
     return next({ status: 400, message: `'${id}' is not a valid todo ID` })
@@ -65,16 +65,10 @@ exports.getTodoById = async (req, res, next) => {
 
 ## Adding the GET /todos/:id route
 
-Start by importing the `getTodoById` function into `todoRoutes.js` by adding it to the current import from `todoController.js`:
-
-```javascript
-const { getAllTodos, getTodoById } from '../controllers/todoController')
-```
-
 And add the new route:
 
 ```javascript
-router.get('/:id', getTodoById)
+router.get('/:id', todoController.getTodoById)
 ```
 
 `router` is already being exported so nothing needs to be added there.

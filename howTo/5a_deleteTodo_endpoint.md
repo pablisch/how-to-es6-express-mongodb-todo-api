@@ -82,7 +82,7 @@ const {
 And add the new route:
 
 ```javascript
-router.delete('/', deleteTodo)
+router.delete('/', todoController.deleteTodo)
 ```
 
 And as before, there is no need to add anything to `app.js`.

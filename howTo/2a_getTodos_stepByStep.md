@@ -74,7 +74,7 @@ export default router
 Between the imports and export, add the first route:
 
 ```javascript
-router.get('/', getAllTodos)
+router.get('/', todoController.getAllTodos)
 ```
 
 **NOTE:** The route is now just `/` as the `/todos` endpoint root is handled in the app.js file.
@@ -152,7 +152,7 @@ import todoController from '../controllers/todoController'
 
 const router = Router()
 
-router.get('/', getAllTodos)
+router.get('/', todoController.getAllTodos)
 
 export default router
 ```
