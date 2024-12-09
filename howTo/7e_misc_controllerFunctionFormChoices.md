@@ -208,4 +208,4 @@ const { getAllTodos } = todoController
 router.get('/todos', getAllTodos)
 ```
 
-Not sure why you would want to but everyone seems to have a different favourite way of writing and reading code.
+Not sure why you would want to do this but everyone seems to have a different favourite way of writing and reading code.
