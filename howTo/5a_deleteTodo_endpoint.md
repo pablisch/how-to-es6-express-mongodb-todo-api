@@ -76,7 +76,7 @@ const {
   getTodoById,
   createTodo,
   deleteTodo,
-} = require('../controllers/todoController')
+} from '../controllers/todoController')
 ```
 
 And add the new route:

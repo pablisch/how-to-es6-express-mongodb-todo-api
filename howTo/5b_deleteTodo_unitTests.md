@@ -10,7 +10,7 @@ const {
   getTodoById,
   createTodo,
   deleteTodo,
-} = require('./todoController')
+} from './todoController')
 ```
 
 Within the over-arching `describe('Todo routes controller functions unit tests')` block, add a `describe` block for the `deleteTodo` function:

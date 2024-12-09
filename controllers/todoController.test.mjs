@@ -1,14 +1,14 @@
 process.env.MONGODB_DATABASE_NAME = 'todo_TEST'
 
 import seedTodos from '../seed/seedTodos.js'
-// const seedTodos = require('../seed/seedTodos')
+// const seedTodos from '../seed/seedTodos')
 // const {
 //   getAllTodos,
 //   getTodoById,
 //   createTodo,
 //   deleteTodo,
 //   updateTodo,
-// } = require('./todoController')
+// } from './todoController')
 import todoController from './todoController.js'
 import Todo from '../models/todo.js'
 

@@ -5,9 +5,9 @@
 In the file, `seedTodos.js`, import the `Todo` schema, `todoSeedData` and the database connection function:
 
 ```javascript
-const Todo = require('../models/todo')
-const todoSeedData = require('./todosSeedData')
-const connectToDatabase = require('../db')
+import Todo from '../models/todo.js'
+import todoSeedData from './todosSeedData'
+import connectToDatabase from '../db'
 ```
 
 ## Functions to delete and insert todos
@@ -69,7 +69,7 @@ For seeding scripts, we need a file that will simply call `seedTodos`.
 In `callSeedTodos.js`, import the `seedTodos` function and call it:
 
 ```javascript
-const seedTodos = require('./seedTodos')
+import seedTodos from './seedTodos'
 
 ;(async () => {
   try {
@@ -113,9 +113,9 @@ In the `scripts` section, add:
 ### seed/seedTodos.js
 
 ```javascript
-const Todo = require('../models/todo')
-const todoSeedData = require('./todosSeedData')
-const connectToDatabase = require('../db')
+import Todo from '../models/todo.js'
+import todoSeedData from './todosSeedData'
+import connectToDatabase from '../db'
 
 const clearTodos = async () => {
   await Todo.deleteMany({})
@@ -148,7 +148,7 @@ export default seedTodos
 ### seed/callSeedTodos.js
 
 ```javascript
-const seedTodos = require('./seedTodos')
+import seedTodos from './seedTodos'
 
 ;(async () => {
   try {

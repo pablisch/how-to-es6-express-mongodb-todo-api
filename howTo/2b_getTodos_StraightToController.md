@@ -5,7 +5,7 @@
 In the controller file, `todoController.js`, in the `controllers` folder, start by adding imports for `mongoose` and the `Todo` schema model:
 
 ```javascript
-const Todo = require('../models/todo')
+import Todo from '../models/todo.js'
 import mongoose from 'mongoose'
 ```
 
@@ -27,10 +27,8 @@ exports.getAllTodos = async (req, res, next) => {
 In the routes/todoRoutes.js file, import the express router and the todo controller, create the router, and export it:
 
 ```javascript
-const { Router } = require('express')
+import { Router } from 'express'
 const router = Router()
-
-const { getAllTodos } = require('../controllers/todoController')
 
 export default router
 ```
@@ -48,7 +46,7 @@ router.get('/', getAllTodos)
 In the app.js file, import the todo route as `todoRoutes` with the other imports:
 
 ```javascript
-const todoRoutes = require('./routes/todoRoutes')
+import todoRoutes from './routes/todoRoutes'
 ```
 
 Use`todoRoutes` between the single home route and the `next` error handling middleware:
@@ -61,7 +59,7 @@ The `app.js` file should now look ike this:
 
 ```javascript
 import express from 'express'
-const todoRoutes = require('./routes/todoRoutes')
+import todoRoutes from './routes/todoRoutes'
 
 const app = express()
 
@@ -87,8 +85,8 @@ export default app
 
 ```javascript
 import express from 'express'
-const todoRoutes = require('./routes/todoRoutes')
-const cors = require('cors')
+import todoRoutes from './routes/todoRoutes'
+import cors from 'cors'
 
 const app = express()
 
@@ -109,10 +107,8 @@ export default app
 ### routes/todoRoutes.js
 
 ```javascript
-const { Router } = require('express')
+import { Router } from 'express'
 const router = Router()
-
-const { getAllTodos } = require('../controllers/todoController')
 
 router.get('/', getAllTodos)
 
@@ -122,7 +118,7 @@ export default router
 ### controllers/todoController.js
 
 ```javascript
-const Todo = require('../models/todo')
+import Todo from '../models/todo.js'
 import mongoose from 'mongoose'
 
 exports.getAllTodos = async (req, res, next) => {

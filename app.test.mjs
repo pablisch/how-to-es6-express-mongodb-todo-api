@@ -1,11 +1,11 @@
 process.env.MONGODB_DATABASE_NAME = 'todo_TEST'
 
-// const request = require('supertest')
+// const request from 'supertest')
 import app from './app'
 import request from 'supertest'
 // import app from './app.js'
 import seedTodos from './seed/seedTodos.js'
-// const seedTodos = require('./seed/seedTodos')
+// const seedTodos from './seed/seedTodos')
 
 describe('App todo endpoints integration tests', () => {
   beforeEach(async () => {

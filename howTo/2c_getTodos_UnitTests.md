@@ -11,9 +11,9 @@ In the file, `todoController.test.js`, in the `controllers` folder, import `getA
 ```javascript
 process.env.MONGODB_DATABASE_NAME = 'todo_TEST'
 
-const seedTodos = require('../seed/seedTodos')
-const { getAllTodos } = require('./todoController')
-const Todo = require('../models/todo')
+const seedTodos from '../seed/seedTodos')
+const { getAllTodos } from './todoController')
+import Todo from '../models/todo.js'
 ```
 
 ### Set up an over-arching `describe` block and `beforeEach` block
@@ -115,9 +115,9 @@ npm test
 ```javascript
 process.env.MONGODB_DATABASE_NAME = 'todo_TEST'
 
-const seedTodos = require('../seed/seedTodos')
-const { getAllTodos } = require('./todoController')
-const Todo = require('../models/todo')
+const seedTodos from '../seed/seedTodos')
+const { getAllTodos } from './todoController')
+import Todo from '../models/todo.js'
 
 describe('Todo routes controller functions unit tests', () => {
   beforeEach(async () => {

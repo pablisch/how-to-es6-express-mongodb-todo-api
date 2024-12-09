@@ -6,8 +6,9 @@ We now have a basic Express server, a MongoDB database and a database connection
 
 ```javascript
 import app from './app.js'
+import connectToDatabase from './db'
+
 const port = process.env.PORT || 3000
-const connectToDatabase = require('./db')
 
 ;(async () => {
   try {
@@ -57,8 +58,9 @@ The minimal step to add the database connection would be to import the connectio
 
 ```javascript
 import app from './app.js'
+import connectToDatabase from './db'
+
 const port = process.env.PORT || 3000
-const connectToDatabase = require('./db')
 
 connectToDatabase()
 
@@ -131,8 +133,9 @@ OR
 
 ```javascript
 import app from './app.js'
+import connectToDatabase from './db'
+
 const port = process.env.PORT || 3000
-const connectToDatabase = require('./db')
 
 ;(async () => {
   try {

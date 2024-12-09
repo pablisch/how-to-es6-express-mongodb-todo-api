@@ -5,7 +5,7 @@
 Add the `getTodoById` function to the existing imports:
 
 ```javascript
-const { getAllTodos, getTodoById } = require('./todoController')
+const { getAllTodos, getTodoById } from './todoController')
 ```
 
 ## Happy route tests

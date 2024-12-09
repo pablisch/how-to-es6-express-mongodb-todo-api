@@ -5,7 +5,7 @@
 Add the `createTodo` function to the existing imports:
 
 ```javascript
-const { getAllTodos, getTodoById, createTodo } = require('./todoController')
+const { getAllTodos, getTodoById, createTodo } from './todoController')
 ```
 
 Within the over-arching `describe('Todo routes controller functions unit tests')` block, add a `describe` block for the `createTodo` function:

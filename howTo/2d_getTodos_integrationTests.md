@@ -7,9 +7,9 @@ In the `app.test.js` file, import `app`, `request` from `supertest` and the `see
 ```javascript
 process.env.MONGODB_DATABASE_NAME = 'todo_TEST'
 
-const request = require('supertest')
+const request from 'supertest')
 import app from './app.js'
-const seedTodos = require('./seed/seedTodos')
+const seedTodos from './seed/seedTodos')
 ```
 
 **NOTE:** Setting the `MONGODB_DATABASE_NAME` environment variable overrides the default value of `todos_DEV`.
@@ -65,9 +65,9 @@ npm test
 ```javascript
 process.env.MONGODB_DATABASE_NAME = 'todo_TEST'
 
-const request = require('supertest')
+const request from 'supertest')
 import app from './app.js'
-const seedTodos = require('./seed/seedTodos')
+const seedTodos from './seed/seedTodos')
 
 describe('App todo endpoints integration tests', () => {
   beforeEach(async () => {

@@ -29,21 +29,33 @@ Import the `Todo` schema from `models` so that controller functions can referenc
 Import `mongoose` to be able to validate IDs as valid MongoDB IDs.
 
 ```javascript
-const Todo = require('../models/todo')
+import Todo from '../models/todo.js'
 import mongoose from 'mongoose'
 ```
 
-The logic for the todo route should be moved from `app.js` into the controller file, `todoController.js`, in the `controllers` folder.
+There are choices to be made about how to import and export functions. The most common pattern I have seen for an Express API is to export each function individually, e.g. `export const getAllTodos = ...` and then they are imported destructured from the controller file, e.g. `import { getAllTodos, ... } from ...`. Personally I prefer to export the whole controller and call functions from the controller which I find both easier and more verbose in a helpful way. For the sake fo this guide, I suggest following this pattern and then refactoring afterwards if you prefer.
+
+Create a `default export` block:
 
 ```javascript
-exports.getAllTodos = async (req, res, next) => {
+export default {
+  
+}
+```
+
+All todo controller functions will go inside this block and will not need any further exporting.
+
+Now, the logic for the todo route should be moved from `app.js` into the controller file, `todoController.js`, in the `controllers` folder.
+
+```javascript
+getAllTodos: async function (req, res, next) {
   try {
     const todos = await Todo.find()
     res.status(200).json(todos)
   } catch (error) {
     next(error)
   }
-}
+},
 ```
 
 ## Create the todo route
@@ -51,10 +63,10 @@ exports.getAllTodos = async (req, res, next) => {
 In the routes/todoRoutes.js file, import the express router and the todo controller, create the router, and export it:
 
 ```javascript
-const { Router } = require('express')
-const router = Router()
+import { Router } from 'express'
+import todoController from '../controllers/todoController'
 
-const { getAllTodos } = require('../controllers/todoController')
+const router = Router()
 
 export default router
 ```
@@ -72,7 +84,7 @@ router.get('/', getAllTodos)
 In the app.js file, import the todo route as `todoRoutes` with the other imports:
 
 ```javascript
-const todoRoutes = require('./routes/todoRoutes')
+import todoRoutes from './routes/todoRoutes'
 ```
 
 Use`todoRoutes` between the single home route and the `next` error handling middleware:
@@ -86,7 +98,7 @@ app.use('/todos', todoRoutes)
 Remove this import snippets of old Todo schema from app.js:
 
 ```javascript
-const Todo = require('../models/todo') // remove this line
+import Todo from '../models/todo.js' // remove this line
 ```
 
 and the route:
@@ -113,8 +125,8 @@ At this point, you could also remove the `home` route from app.js, whose purpose
 
 ```javascript
 import express from 'express'
-const todoRoutes = require('./routes/todoRoutes')
-const cors = require('cors')
+import todoRoutes from './routes/todoRoutes'
+import cors from 'cors'
 
 const app = express()
 
@@ -135,10 +147,10 @@ export default app
 ### routes/todoRoutes.js
 
 ```javascript
-const { Router } = require('express')
-const router = Router()
+import { Router } from 'express'
+import todoController from '../controllers/todoController'
 
-const { getAllTodos } = require('../controllers/todoController')
+const router = Router()
 
 router.get('/', getAllTodos)
 
@@ -148,7 +160,7 @@ export default router
 ### controllers/todoController.js
 
 ```javascript
-const Todo = require('../models/todo')
+import Todo from '../models/todo.js'
 import mongoose from 'mongoose'
 
 exports.getAllTodos = async (req, res, next) => {

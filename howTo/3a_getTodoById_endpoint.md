@@ -68,7 +68,7 @@ exports.getTodoById = async (req, res, next) => {
 Start by importing the `getTodoById` function into `todoRoutes.js` by adding it to the current import from `todoController.js`:
 
 ```javascript
-const { getAllTodos, getTodoById } = require('../controllers/todoController')
+const { getAllTodos, getTodoById } from '../controllers/todoController')
 ```
 
 And add the new route:
