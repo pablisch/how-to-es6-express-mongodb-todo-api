@@ -55,7 +55,7 @@ Between the imports and export, add the first route:
 router.get('/', todoController.getAllTodos)
 ```
 
-**NOTE:** The route is just `/` as the `/todos` endpoint root is handled in the app.js file.
+**NOTE:** The route is just `/` as the `/api/v1.0/todos` endpoint root is handled in the app.js file.
 
 ## Import and use the todo route into app.js
 
