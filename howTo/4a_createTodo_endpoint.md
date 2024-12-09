@@ -3,7 +3,7 @@
 ## Write the basic createTodo controller function
 
 ```javascript
-createTodo: async function (req, res, next) {
+createTodo: async (req, res, next) => {
   const { task } = req.body
   const todo = new Todo({
     task,
@@ -56,7 +56,7 @@ if (typeof task !== 'string')
 These can all go sequentially after the destructuring of `task` resulting in the completed function:
 
 ```javascript
-createTodo: async function (req, res, next) {
+createTodo: async (req, res, next) => {
   const { task } = req.body
   if (task === '')
     return next({

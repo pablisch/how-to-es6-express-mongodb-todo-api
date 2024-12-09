@@ -48,7 +48,7 @@ All todo controller functions will go inside this block and will not need any fu
 Now, the logic for the todo route should be moved from `app.js` into the controller file, `todoController.js`, in the `controllers` folder.
 
 ```javascript
-getAllTodos: async function (req, res, next) {
+getAllTodos: async (req, res, next) => {
   try {
     const todos = await Todo.find()
     res.status(200).json(todos)

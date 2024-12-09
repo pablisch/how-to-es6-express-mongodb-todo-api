@@ -3,7 +3,7 @@
 ## Write the basic getTodoById controller function
 
 ```javascript
-getTodoById: async function (req, res, next) {
+getTodoById: async (req, res, next) => {
   const { id } = req.params
   try {
     const todo = await Todo.findById(id)
@@ -44,7 +44,7 @@ Other server errors will be handled by the `next` middleware.
 The `getTodoById` controller with validation and error handling looks like this:
 
 ```javascript
-getTodoById: async function (req, res, next) {
+getTodoById: async (req, res, next) => {
   const { id } = req.params
   if (!mongoose.Types.ObjectId.isValid(id))
     return next({ status: 400, message: `'${id}' is not a valid todo ID` })

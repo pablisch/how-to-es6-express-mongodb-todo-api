@@ -79,10 +79,10 @@ describe('App todo endpoints integration tests', () => {
 
     test.each([
       [undefined, 'No task was provided'],
-      // ['', 'The task property cannot be an empty string'],
-      // [212, 'Task must be a string but type number was given'],
-      // [['Hello world'], 'Task must be a string but type object was given'],
-      // [true, 'Task must be a string but type boolean was given'],
+      ['', 'The task property cannot be an empty string'],
+      [212, 'Task must be a string but type number was given'],
+      [['Hello world'], 'Task must be a string but type object was given'],
+      [true, 'Task must be a string but type boolean was given'],
     ])(
       'should return status 400 and an appropriate error message when given task value: "%s"',
       async (task, errorMessage) => {

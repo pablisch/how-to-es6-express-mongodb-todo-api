@@ -24,7 +24,7 @@ All todo controller functions will go inside this block and will not need any fu
 Add the simple controller function
 
 ```javascript
-getAllTodos: async function (req, res, next) {
+getAllTodos: async (req, res, next) => {
   try {
     const todos = await Todo.find()
     res.status(200).json(todos)

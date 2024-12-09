@@ -2,7 +2,7 @@ import Todo from '../models/todo.js'
 import mongoose from 'mongoose'
 
 export default {
-  getAllTodos: async function (req, res, next) {
+  getAllTodos: async (req, res, next) => {
     try {
       const todos = await Todo.find()
       res.status(200).json(todos)
@@ -11,7 +11,7 @@ export default {
     }
   },
 
-  getTodoById: async function (req, res, next) {
+  getTodoById: async (req, res, next) => {
     const { id } = req.params
     if (!mongoose.Types.ObjectId.isValid(id))
       return next({ status: 400, message: `'${id}' is not a valid todo ID` })
@@ -29,7 +29,7 @@ export default {
     }
   },
 
-  createTodo: async function (req, res, next) {
+  createTodo: async (req, res, next) => {
     const { task } = req.body
     if (task === '')
       return next({
@@ -54,7 +54,7 @@ export default {
     }
   },
 
-  deleteTodo: async function (req, res, next) {
+  deleteTodo: async (req, res, next) => {
     const { id } = req.params
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return next({ status: 400, message: `'${id}' is not a valid todo ID` })
@@ -75,7 +75,7 @@ export default {
     }
   },
 
-  updateTodo: async function (req, res, next) {
+  updateTodo: async (req, res, next) => {
     const { id } = req.params
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return next({ status: 400, message: `'${id}' is not a valid todo ID` })

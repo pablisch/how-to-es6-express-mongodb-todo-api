@@ -5,7 +5,7 @@
 The `PATCH` controller is by far the most complex in its basic structure, validation and error handling.
 
 ```javascript
-updateTodo: async function (req, res, next) {
+updateTodo: async (req, res, next) => {
   const { id } = req.params
   const updates = req.body
   const { task, completed } = req.body
@@ -118,7 +118,7 @@ There is a logical order to these checks though not all are important.
 **NOTE:** the check for `task` being an empty string should come before any other checks about `task` and `completed` to operate as expected since the empty string is a `falsey` value.
 
 ```javascript
-updateTodo: async function (req, res, next) {
+updateTodo: async (req, res, next) => {
   const { id } = req.params
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return next({ status: 400, message: `'${id}' is not a valid todo ID` })
