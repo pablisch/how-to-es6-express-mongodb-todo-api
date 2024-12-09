@@ -33,7 +33,7 @@ import Todo from '../models/todo.js'
 import mongoose from 'mongoose'
 ```
 
-There are choices to be made about how to import and export functions. The most common pattern I have seen for an Express API is to export each function individually, e.g. `export const getAllTodos = ...` and then they are imported destructured from the controller file, e.g. `import { getAllTodos, ... } from ...`. Personally I prefer to export the whole controller and call functions from the controller which I find both easier and more verbose in a helpful way. For the sake fo this guide, I suggest following this pattern and then refactoring afterwards if you prefer.
+There are choices to be made about how to import and export functions. The most common pattern I have seen for an Express API is to export each function individually, e.g. `export const getAllTodos = ...` and then they are imported destructured from the controller file, e.g. `import { getAllTodos, ... } from ...`. Personally I prefer to export the whole controller and call functions from the controller which I find both easier and more verbose in a helpful way. For the sake fo this guide, I suggest following this pattern and then refactoring afterwards if you prefer. There is also an information section on [function form choices](7e_misc_controllerFunctionFormChoices.md).
 
 Create a `default export` block:
 
